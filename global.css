@@ -30,11 +30,20 @@ h5 {
 }
 
 section {
-	margin: 5rem auto;
+  margin: 5rem auto;
+}
+
+p {
+  line-height: 1.5;
+  margin: 1.2em 0;
 }
 
 article {
 	margin: 0 auto;
 	width: 80%;
 	max-width: 600px;
+}
+
+a:link, a:visited {
+  color: #f8de68;
 }
