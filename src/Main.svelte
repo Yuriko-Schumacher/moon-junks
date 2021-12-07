@@ -1,7 +1,7 @@
 <script>
   import * as d3 from 'd3';
 
-  import Title from './Title.svelte'
+  import Intro from './Intro.svelte'
   import Scrolly from './Scrolly.svelte'
   import ThreeDMoon from './ThreeDMoon.svelte'
 
@@ -17,7 +17,8 @@
   parseData(data)
 </script>
 
-<Title />
+<Intro />
+<br><br><br><br><br><br><br><br><br>
 <Scrolly data={data} />
 <br><br><br><br><br><br><br><br><br>
 <ThreeDMoon data={data} />
