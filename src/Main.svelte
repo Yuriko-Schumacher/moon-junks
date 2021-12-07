@@ -1,8 +1,9 @@
 <script>
   import * as d3 from 'd3';
 
-  import TwoDMoon from './TwoDMoon.svelte'
-  // import ThreeDMoon from './ThreeDMoon.svelte'
+  import Title from './Title.svelte'
+  import Scrolly from './Scrolly.svelte'
+  import ThreeDMoon from './ThreeDMoon.svelte'
 
   export let data;
 
@@ -16,5 +17,7 @@
   parseData(data)
 </script>
 
-<TwoDMoon data={data} />
-<!-- <ThreeDMoon data={data} /> -->
+<Title />
+<Scrolly data={data} />
+<br><br><br><br><br><br><br><br><br>
+<ThreeDMoon data={data} />

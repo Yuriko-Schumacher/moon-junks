@@ -22,7 +22,7 @@
     );
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
-      canvas: document.querySelector("canvas"),
+      canvas: canvasContainer.querySelector("canvas"),
     });
     renderer.setSize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
     renderer.setPixelRatio(window.devicePixelRatio);

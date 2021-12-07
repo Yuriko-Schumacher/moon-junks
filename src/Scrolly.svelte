@@ -9,11 +9,12 @@
   import Shaders from "./Shaders.js";
 
   export let data;
+
   const nearSideD = data.filter(d => Math.abs(d.east) < 90)
 
   let index, offset, progress;
-  const width = 950;
-  const height = 600;
+  const width = 900;
+  const height = 550;
   const projection = d3.geoOrthographic();
 
   console.log(data)
@@ -106,7 +107,7 @@
 </script>
 
 <Scroller top="{0.2}" bottom="{0.8}" bind:index bind:offset bind:progress>
-  <div slot="background">
+  <div class="background" slot="background">
     <div class="tooltip">
       <strong><span id="object">Object</span></strong
       ><br />
@@ -117,6 +118,20 @@
     <div id="container">
       <canvas></canvas>
       <svg width={width} height={height}>
+        <defs>
+          <mask id="moon">
+              <circle id="outer" cx="480" cy="250" r="800" fill="white"/>
+              <circle id="inner" cx="480" cy="250" r="250"/>
+          </mask>
+        </defs>
+        <rect
+          x="0"
+          y="0"
+          width="{width}"
+          height="{height}"
+          fill="rgb(0, 0, 0)"
+          mask="url(#moon)"
+        ></rect>
         <g>
           {#each $circles as {cx, cy, cr, strokeWidth, opacity, r, g, b}} 
             <circle
@@ -136,7 +151,7 @@
     <p>Section {index + 1} is currently active.</p>
   </div>
 
-  <div slot="foreground">
+  <div class="foreground" slot="foreground">
     <section>This is the first section.</section>
     <section>This is the second section.</section>
     <section>This is the third section.</section>
@@ -167,5 +182,15 @@
 
   section {
     height: 80vh;
+  }
+
+  .background {
+    /* background: rgba(255, 255, 255, 0.1); */
+  }
+
+  .foreground {
+    margin: 0 0 0 auto;
+    width: calc(100vw - 800px);
+    background: rgba(64, 224, 208, 0.1);
   }
 </style>
