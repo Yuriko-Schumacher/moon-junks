@@ -1,0 +1,8 @@
+body {
+	margin: 0;
+	background: black;
+	color: white;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	overflow-x: hidden;
+}
