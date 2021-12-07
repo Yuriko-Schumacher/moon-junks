@@ -216,6 +216,9 @@
 
 </script>
 
+<h1>
+  Explore the man-made objects on the moon!
+</h1>
 <div class="tooltip">
   <strong><span id="object">Object</span></strong
   ><br />
@@ -228,6 +231,10 @@
 </div>
 
 <style>
+  h1 {
+    text-align: center;
+  }
+
   canvas {
     width: 100vw;
     height: 100vh;

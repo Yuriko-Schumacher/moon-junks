@@ -64,7 +64,7 @@
           A mysterious object spotted
         </h2>
         <p>
-          China's Moon rover Yutu 2 has spotted a mysterious cubic object on the far side of the Moon. Our Space, a website affiliated with the China National Space Administration, <a href="https://mp.weixin.qq.com/s/dpKkjWHk9tay3JERnrfuUw" target="_blank">reported Friday</a> that scientists observed the object, introducing it as "神秘小屋" ("mystery hut").
+          China's Moon rover Yutu 2 has spotted a mysterious cubic object on the far side of the Moon. Our Space, a website affiliated with the China National Space Administration, <a href="https://mp.weixin.qq.com/s/dpKkjWHk9tay3JERnrfuUw" target="_blank">reported Friday</a> that scientists observed the object, introducing it as "mystery hut".
         </p><br>
         <img src="./image/mystery-house.jpeg" width="100%" alt="">
         <div class="in-line-caption">The image that captured a cubic object. (Credit: CNSA/Our Space)</div><br>

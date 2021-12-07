@@ -4,11 +4,14 @@
   import Intro from './Intro.svelte'
   import Scrolly from './Scrolly.svelte'
   import ThreeDMoon from './ThreeDMoon.svelte'
+  import Footer from "./Footer.svelte"
 
   export let data;
 
   const parseData = (data) => {
     data.map(d => {
+      d.by_year = +d.by_year;
+      d.by_country = +d.by_country;
       d.launch_year = +d.launch_year;
       d.north = +d.north;
       d.east = +d.east;
@@ -22,3 +25,4 @@
 <Scrolly data={data} />
 <br><br><br><br><br><br><br><br><br>
 <ThreeDMoon data={data} />
+<Footer />

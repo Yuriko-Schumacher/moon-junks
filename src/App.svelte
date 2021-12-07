@@ -7,7 +7,7 @@
   
   let promise = getData();
   async function getData() {
-    moonD = await d3.csv("data/manmade_materials_with_location.csv")
+    moonD = await d3.csv("data/manmade_materials_full.csv")
   }
 </script>
 
