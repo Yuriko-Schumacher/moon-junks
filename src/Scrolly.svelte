@@ -343,6 +343,11 @@
     </section>
     <section class="step" data-section-id="7">
       <p>
+        More than 96% of those objects were left by the U.S., followed by the Soviet Union. Other countries include China, India, Japan, and the European Space Agency (ESA).
+      </p>
+    </section>
+    <section class="step" data-section-id="8">
+      <p>
         In the late 60s to early 70s, the Soviet Union and the U.S. were in the “Space Race” -- the competition during the Cold War to achieve superior spaceflight capability.
       </p>
       <p>
@@ -350,11 +355,6 @@
       </p>
       <p>
         There was a huge spike in the number of human artifacts on the moon in the late 1960s and 1970s.
-      </p>
-    </section>
-    <section class="step" data-section-id="8">
-      <p>
-        More than 96% of those objects were left by the U.S., followed by the Soviet Union. Other countries include China, India, Japan, and the European Space Agency (ESA).
       </p>
     </section>
   </div>
