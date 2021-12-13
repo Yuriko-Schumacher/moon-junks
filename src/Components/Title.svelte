@@ -44,7 +44,7 @@
   
   @keyframes changeLetter {
     0% {
-      content: "Junks";
+      content: "Junk";
     }
     25% {
       content: "Debris"
