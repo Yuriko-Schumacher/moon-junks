@@ -83,7 +83,7 @@
     <section data-section-id="4">
       <article>
         <h2>
-          Send polluting industries to space to protect environment?
+          Send polluting industries to space to protect Earth's environment?
         </h2>
         <p>
           Moreover, the race to get tourists to space is heating up. Blue Origin, one of the major aerospace companies founded by billionaire Jeff Bezos, completed its first human flight with citizens this year. As one of the crews, Bezos expressed his excitement with the success, though his post-flight comment aroused controversy.

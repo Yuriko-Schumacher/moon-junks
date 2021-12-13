@@ -39,7 +39,7 @@
       They might be small compared to the whole moon, or they might be so far away from us. But think about the Moon you might see tonight.
     </p>
     <p>
-      The Moon phase tonight will be Waxing Crescent, and within the area that is visible to us, there are 7 moon junks or human landing locations. 
+      How many man-made objects would be on the visible areas of the Moon from where you are?
     </p>
     <p>
       Protecting the Earth may sound our priority, but it doesn't mean we are encouraged to move pollutants to the space.
