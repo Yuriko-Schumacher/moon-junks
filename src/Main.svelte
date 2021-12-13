@@ -30,7 +30,7 @@
 <section>
   <article>
     <h2>
-      Non of our business?
+      None of our business?
     </h2>
     <p>
       The number of man-made objects, or moon junks are only increasing.
@@ -42,7 +42,7 @@
       How many man-made objects would be on the visible areas of the Moon from where you are?
     </p>
     <p>
-      Protecting the Earth may sound our priority, but it doesn't mean we are encouraged to move pollutants to the space.
+      Protecting the Earth may sound our priority, but it doesn't mean we are encouraged to move pollutants to space.
     </p>
     <p>
       <a href="https://yuriko-schumacher.github.io/moon-three/">Explore man-made objects on the moon</a>
