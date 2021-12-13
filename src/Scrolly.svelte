@@ -6,8 +6,6 @@
 
   export let data;
   export let geo;
-  console.log(geo)
-  console.log(data)
 
   let index, offset, progress;
   const width = window.innerWidth / 2;
