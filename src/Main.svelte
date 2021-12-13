@@ -8,6 +8,9 @@
 
   export let data;
 
+  let moonD = data[0]
+  let moonGeo = data[1]
+
   const parseData = (data) => {
     data.map(d => {
       d.by_year = +d.by_year;
@@ -15,14 +18,15 @@
       d.launch_year = +d.launch_year;
       d.north = +d.north;
       d.east = +d.east;
+      d.id = +d.id;
     })
   }
-  parseData(data)
+  parseData(moonD)
 </script>
 
-<Intro />
+<!-- <Intro /> -->
 <br><br><br><br><br><br><br><br><br>
-<Scrolly data={data} />
+<Scrolly data={moonD} geo={moonGeo}/>
 <section>
   <article>
     <h2>
@@ -43,5 +47,5 @@
   </article>
 </section>
 <br><br><br><br><br><br><br><br><br>
-<ThreeDMoon data={data} />
-<Footer />
+<!-- <ThreeDMoon data={moonD} /> -->
+<!-- <Footer /> -->

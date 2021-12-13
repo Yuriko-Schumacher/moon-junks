@@ -10,7 +10,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 18px;
+	font-size: 20px;
 	scroll-behavior: smooth;
 	background: var(--main-bg);
 	color: white;
@@ -46,4 +46,13 @@ article {
 
 a:link, a:visited {
   color: #f8de68;
+}
+
+text {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.tooltip {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8rem;
 }
