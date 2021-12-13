@@ -24,7 +24,7 @@
   parseData(moonD)
 </script>
 
-<!-- <Intro /> -->
+<Intro />
 <br><br><br><br><br><br><br><br><br>
 <Scrolly data={moonD} geo={moonGeo}/>
 <section>
@@ -47,5 +47,5 @@
   </article>
 </section>
 <br><br><br><br><br><br><br><br><br>
-<!-- <ThreeDMoon data={moonD} /> -->
-<!-- <Footer /> -->
+<ThreeDMoon data={moonD} />
+<Footer />
