@@ -3,8 +3,6 @@
   import * as d3 from "d3"
   import Scroller from "@sveltejs/svelte-scroller";
   import { spring } from 'svelte/motion';
-import Main from './Main.svelte';
-import { Line } from 'three';
 
   export let data;
   export let geo;
@@ -137,7 +135,7 @@ import { Line } from 'three';
 
   let newCircles;
 
-  let rasterOpacity = spring({ near: 1, far: 0},
+  let rasterOpacity = spring({ near: 0.8, far: 0},
     {
       stiffness: 0.1,
       damping: 0.9
@@ -145,17 +143,20 @@ import { Line } from 'three';
   let newRasterOpacity;
 
   let waffleOpacity;
-  let waffleText;
+  let waffleText = "";
+
+  const years = [...Array(52).keys()].map(d => d + 1959)
+  const countries = ["US", "Soviet", "Japan", "India", "China", "ESA"];
 
   $: {
     if (index === 0) {
       newRasterOpacity = {
-        near: 1,
+        near: 0.8,
         far: 0
       }
       newCircles = data.map((d) => ({
-        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: 0,
         r: colors.yellow.r,
@@ -169,11 +170,11 @@ import { Line } from 'three';
     if (index === 1) {
       newRasterOpacity = {
         near: 0.3,
-        far: 1
+        far: 0.8
       }
       newCircles = data.map((d) => ({
-        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: 0,
         r: colors.yellow.r,
@@ -185,11 +186,11 @@ import { Line } from 'three';
     if (index === 2) {
       newRasterOpacity = {
         near: 0.3,
-        far: 1
+        far: 0.8
       }
       newCircles = data.map((d) => ({
-        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: d.object === "Chang'e 4" ? 1 : 0,
         r: colors.yellow.r,
@@ -200,12 +201,12 @@ import { Line } from 'three';
     } else 
     if (index === 3) {
       newRasterOpacity = {
-        near: 1,
-        far: 0.5
+        near: 0.8,
+        far: 0.3
       }
       newCircles = data.map((d) => ({
-        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: d.launch_year === 1959 ? 1 : 0,
         r: colors.yellow.r,
@@ -216,14 +217,14 @@ import { Line } from 'three';
     } else 
     if (index === 4 || index === 6) {
       newRasterOpacity = {
-        near: 1,
-        far: 1
+        near: 0.8,
+        far: 0.8
       }
       newCircles = data.map((d) => ({
-        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
-        opacity: d.east === 0 || d.object === "Chang'e 4" ? 0 : 0.8,
+        opacity: d.north === 0 || d.object === "Chang'e 4" ? 0 : 0.8,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
@@ -234,14 +235,14 @@ import { Line } from 'three';
     } else 
     if (index === 5) {
       newRasterOpacity = {
-        near: 1,
-        far: 1
+        near: 0.8,
+        far: 0.8
       }
       newCircles = data.map((d) => ({
-        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
-        opacity: d.is_apollo === "TRUE" && d.east !== 0 ? 0.8 : 0,
+        opacity: d.is_apollo === "TRUE" && d.north !== 0 ? 0.8 : 0,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
@@ -250,7 +251,7 @@ import { Line } from 'three';
     } else 
     if (index === 7) {
       xScale = d3.scaleLinear().domain([0, 100]).range([150, width - margin.r])
-      yScale = d3.scaleLinear().domain([1958, 2009]).range([margin.t + 50, height * 2 - 100])
+      yScale = d3.scaleBand().domain(years).range([margin.t + 50, height * 2 - 100])
 
       newRasterOpacity = {
         near: 0,
@@ -260,7 +261,7 @@ import { Line } from 'three';
         cx: d.by_year !== "NA" ? xScale((d.by_year - 1) % 100) : 0,
         cy: d.by_year !== "NA" ? yScale(d.launch_year) + (Math.floor((d.by_year - 1) / 100) + 1) * innerWidth / 350 * 2 : 0,
         cr: innerWidth / 350,
-        opacity: d.by_year === "NA" ? 0 : 0.8,
+        opacity: d.by_year === "NA" ? 0 : 1,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
@@ -271,7 +272,7 @@ import { Line } from 'three';
     } else 
     if (index === 8) {
       xScale = d3.scaleLinear().domain([0, 100]).range([150, width - margin.r])
-      yScale = d3.scaleBand().domain(["US", "Soviet", "Japan", "India", "China", "ESA"]).range([margin.t + 50, height * 2 - 50])
+      yScale = d3.scaleBand().domain(countries).range([margin.t + 50, height * 2 - 100])
 
       newRasterOpacity = {
         near: 0,
@@ -281,7 +282,7 @@ import { Line } from 'three';
         cx: d.by_country !== "NA" ? xScale((d.by_country - 1) % 100) : 0,
         cy: d.by_country !== "NA" ? yScale(d.country) + (Math.floor((d.by_country - 1) / 100) + 1) * innerWidth / 350 * 2 : 0,
         cr: innerWidth / 350,
-        opacity: d.by_year === "NA" ? 0 : 0.8,
+        opacity: d.by_year === "NA" ? 0 : 1,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
@@ -399,7 +400,7 @@ import { Line } from 'three';
           style="opacity: {$rasterOpacity.far}"
         >Far side</text>
         <text
-          x="{150}"
+          x="{margin.l}"
           y="{margin.t}"
           fill="white"
           class="chart-subtitle"
@@ -407,14 +408,37 @@ import { Line } from 'three';
         >{waffleText}</text>
         {#if index >= 7}
           <line
-            x1="{xScale(0) - 20}"
+            x1="{xScale(0) - 10}"
             y1="{margin.t + 50}"
-            x2="{xScale(0) - 20}"
+            x2="{xScale(0) - 10}"
             y2="{height * 2 - 100}"
             stroke-width="1"
             stroke="white"
             style="opacity: 0.3"
           ></line>
+        {/if}
+        {#if index == 7}
+          {#each years.filter(d => d % 5 == 0) as year}
+            <text
+              class="axis-label"
+              x="{xScale(0) - 20}"
+              y="{yScale(year) + yScale.bandwidth() / 2}"
+              fill="white"
+              text-anchor="end"
+            >{year}
+            </text>
+          {/each}
+        {:else if index == 8}
+          {#each countries as country}
+            <text
+              class="axis-label"
+              x="{xScale(0) - 20}"
+              y="{yScale(country) + 9}"
+              fill="white"
+              text-anchor="end"
+            >{country}
+            </text>
+          {/each}
         {/if}
         <g>
           {#each $circles as {cx, cy, cr, opacity, r, g, b, id}} 
@@ -441,7 +465,7 @@ import { Line } from 'three';
       </section>
       <section class="step" data-section-id="1">
         <p>
-          And the image below shows the far side. From Earth, we’d need to go around the Moon to reach this side.
+          The image below shows the far side. From Earth, we’d need to go around the Moon to reach this side.
         </p>
       </section>
       <section class="step" data-section-id="2">
@@ -471,11 +495,6 @@ import { Line } from 'three';
       </section>
       <section class="step" data-section-id="7">
         <p>
-          More than 96% of those objects were left by the U.S., followed by the Soviet Union. Other countries include China, India, Japan, and the European Space Agency (ESA).
-        </p>
-      </section>
-      <section class="step" data-section-id="8">
-        <p>
           In the late 60s to early 70s, the Soviet Union and the U.S. were in the “Space Race” -- the competition during the Cold War to achieve superior spaceflight capability.
         </p>
         <p>
@@ -483,6 +502,11 @@ import { Line } from 'three';
         </p>
         <p>
           There was a huge spike in the number of human artifacts on the moon in the late 1960s and 1970s.
+        </p>
+      </section>
+      <section class="step" data-section-id="8">
+        <p>
+          More than 96% of those objects were left by the U.S., followed by the Soviet Union. Other countries include China, India, Japan, and the European Space Agency (ESA).
         </p>
       </section>
     </div>
@@ -537,7 +561,11 @@ import { Line } from 'three';
   }
 
   .chart-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .axis-label {
+    font-size: 0.6rem;
   }
 </style>

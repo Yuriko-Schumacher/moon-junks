@@ -2,10 +2,10 @@ object,is_apollo,north,east,us_category,country,launch_year,by_year,by_country,i
 Chang’e 1 Orbiter,FALSE,-1.5,52.36,,China,2007,1,1,1
 Chang'e 4,FALSE,-45.457,177.589,,China,2019,NA,NA,2
 SMART-1 (controlled crash),FALSE,-34.4,-46.2,,ESA,2006,1,1,3
-Chandrayaan-1 Lunar Orbiter,FALSE,South Pole,,,India,2008,1,1,4
-Moon Impact Probe,FALSE,South Pole,,,India,2008,2,2,5
+Chandrayaan-1 Lunar Orbiter,FALSE,,,,India,2008,1,1,4
+Moon Impact Probe,FALSE,,,,India,2008,2,2,5
 Hiten spacecraft,FALSE,55.3,-34,,Japan,1990,1,1,6
-Hagoromo orbiter satellite,FALSE,Crash not confirmed,,,Japan,1990,2,2,7
+Hagoromo orbiter satellite,FALSE,,,,Japan,1990,2,2,7
 Kaguya orbiter (SELENE),FALSE,-65.5,80.4,,Japan,2007,2,3,8
 "VRAD Subsatellite (""Ouna"")",FALSE,,,,Japan,2007,3,4,9
 "Relay Subsatellite (""Okina"")",FALSE,,,,Japan,2007,4,5,10
@@ -42,9 +42,9 @@ Surveyor 2,FALSE,5.5,-12,Non-Apollo,US,1966,3,8,40
 Lunar Orbiter 2,FALSE,3,119,Non-Apollo,US,1966,4,9,41
 Lunar Orbiter 3,FALSE,14.3,-97.7,Non-Apollo,US,1967,1,10,42
 Surveyor 3,FALSE,-3.015,-23.418,Non-Apollo,US,1967,2,11,43
-Lunar Orbiter 4,FALSE,Crashed,,Non-Apollo,US,1967,3,12,44
-Surveyor 4,FALSE,UNKNOWN,,Non-Apollo,US,1967,4,13,45
-Explorer 35 (IMP-E),FALSE,UNKNOWN,,Non-Apollo,US,1967,5,14,46
+Lunar Orbiter 4,FALSE,,,Non-Apollo,US,1967,3,12,44
+Surveyor 4,FALSE,,,Non-Apollo,US,1967,4,13,45
+Explorer 35 (IMP-E),FALSE,,,Non-Apollo,US,1967,5,14,46
 Lunar Orbiter 5,FALSE,-3,-83,Non-Apollo,US,1967,6,15,47
 Surveyor 5,FALSE,1.461,23.195,Non-Apollo,US,1967,7,16,48
 Surveyor 6,FALSE,0.473,-1.427,Non-Apollo,US,1967,8,17,49
@@ -55,8 +55,8 @@ Gold Olive Branch,TRUE,,,Apollo 11,US,1969,3,21,53
 Flag Kit,TRUE,,,Apollo 11,US,1969,4,22,54
 "Apollo 1 Patch(Honoring deceased astronauts Grissom,White, Chaffee)",TRUE,,,Apollo 11,US,1969,5,23,55
 "CosmonautMedals(Honoring deceased cosmonauts Gagarin,Komarov)",TRUE,,,Apollo 11,US,1969,6,24,56
-Moon Memorial Disc,TRUE,UNKNOWN,,Apollo 11,US,1969,7,25,57
-Ascent Stage  ,TRUE,0.67337,23.47293,Apollo 11,US,1969,8,26,58
+Moon Memorial Disc,TRUE,,,Apollo 11,US,1969,7,25,57
+Ascent Stage,TRUE,0.67337,23.47293,Apollo 11,US,1969,8,26,58
 Lunar Retro-Ranging Reflector Experiment,TRUE,0.67408,23.47297,Apollo 11,US,1969,9,27,59
 LM Descent Stage (plaque attached),TRUE,,,Apollo 11,US,1969,10,28,60
 "Filter, Polarizing",TRUE,,,Apollo 11,US,1969,11,29,61
@@ -99,14 +99,14 @@ Hammer,TRUE,,,Apollo 11,US,1969,47,65,97
 "Scoop, Lunar sample-large",TRUE,,,Apollo 11,US,1969,48,66,98
 Extension handle,TRUE,,,Apollo 11,US,1969,49,67,99
 Tongs,TRUE,,,Apollo 11,US,1969,50,68,100
-Gnomon (Excludes mount) ,TRUE,,,Apollo 11,US,1969,51,69,101
+Gnomon (Excludes mount),TRUE,,,Apollo 11,US,1969,51,69,101
 Landing Location,TRUE,-3.11,-23.23,Apollo 12,US,1969,52,70,102
 Passive Seismic Experiment (see experiment below),TRUE,,,Apollo 12,US,1969,53,71,103
 Lunar Surface Magnetometer (see experiment below),TRUE,,,Apollo 12,US,1969,54,72,104
 Solar Wind Spectrometer (see experiment below),TRUE,,,Apollo 12,US,1969,55,73,105
 Suprathermal Ion Detector/Cold Cathode Gauge (SIDE/CCGE) (see below),TRUE,,,Apollo 12,US,1969,56,74,106
 Radioisotope Thermal Generator (see experiment below),TRUE,,,Apollo 12,US,1969,57,75,107
-Flag Kit ,TRUE,,,Apollo 12,US,1969,58,76,108
+Flag Kit,TRUE,,,Apollo 12,US,1969,58,76,108
 Surveyor 3,TRUE,,,Apollo 12,US,1969,59,77,109
 LM Ascent Stage,TRUE,-3.94,-21.2,Apollo 12,US,1969,60,78,110
 Central Station,TRUE,-3.00942,-23.42458,Apollo 12,US,1969,61,79,111
@@ -130,7 +130,7 @@ Defecation Collection Device,TRUE,,,Apollo 12,US,1969,76,94,126
 "Conveyor assembly, Lunar Equipment",TRUE,,,Apollo 12,US,1969,79,97,129
 "Deployment Bag, Lunar equipment conveyor",TRUE,,,Apollo 12,US,1969,80,98,130
 PLSS/EVCS Assembly,TRUE,,,Apollo 12,US,1969,81,99,131
-PLSS/EVCS Assembly ,TRUE,,,Apollo 12,US,1969,82,100,132
+PLSS/EVCS Assembly,TRUE,,,Apollo 12,US,1969,82,100,132
 "Collection bag, Calibrated, PLSS Feedwater w/scale",TRUE,,,Apollo 12,US,1969,83,101,133
 "Collection bag, Calib. PLSS Feedwater w/o scale",TRUE,,,Apollo 12,US,1969,84,102,134
 "Safety Line, Lunar Surface",TRUE,,,Apollo 12,US,1969,85,103,135
@@ -140,9 +140,9 @@ PLSS/EVCS Assembly ,TRUE,,,Apollo 12,US,1969,82,100,132
 "Camera, LM Color TV ",TRUE,,,Apollo 12,US,1969,89,107,139
 "Zoom Lens, LM TV",TRUE,,,Apollo 12,US,1969,90,108,140
 "Cable, LM TV Adapter",TRUE,,,Apollo 12,US,1969,91,109,141
-Earplugs  ,TRUE,,,Apollo 12,US,1969,92,110,142
+Earplugs,TRUE,,,Apollo 12,US,1969,92,110,142
 "Adapter, SRC/OPS",TRUE,,,Apollo 12,US,1969,93,111,143
-Interim Stowage Assembly ,TRUE,,,Apollo 12,US,1969,94,112,144
+Interim Stowage Assembly,TRUE,,,Apollo 12,US,1969,94,112,144
 "Canister, ECS LIOH",TRUE,,,Apollo 12,US,1969,95,113,145
 Urine Collection Assembly (Small),TRUE,,,Apollo 12,US,1969,96,114,146
 "Bag, Emesis",TRUE,,,Apollo 12,US,1969,97,115,147
@@ -155,7 +155,7 @@ Urine Collection Assembly (Small),TRUE,,,Apollo 12,US,1969,96,114,146
 "Bag, Camera Mount Bracket",TRUE,,,Apollo 12,US,1969,104,122,154
 Hammock Assembly,TRUE,,,Apollo 12,US,1969,105,123,155
 "Bracket, Installation Color TV Camera",TRUE,,,Apollo 12,US,1969,106,124,156
-Mounting Assembly RTG Fuel Cask  ,TRUE,,,Apollo 12,US,1969,107,125,157
+Mounting Assembly RTG Fuel Cask,TRUE,,,Apollo 12,US,1969,107,125,157
 Fuel Cask,TRUE,,,Apollo 12,US,1969,108,126,158
 Fuel Capsule Assembly,TRUE,,,Apollo 12,US,1969,109,127,159
 Prime ALSEP pallet assembly #1 (d),TRUE,,,Apollo 12,US,1969,110,128,160
@@ -170,7 +170,7 @@ Gnomon,TRUE,,,Apollo 12,US,1969,116,134,166
 Contrast Target,TRUE,,,Apollo 12,US,1969,119,137,169
 Color Chart,TRUE,,,Apollo 12,US,1969,120,138,170
 (d) LS Magnetometer experiment,TRUE,,,Apollo 12,US,1969,121,139,171
-(d) Passive seismic experiment ,TRUE,,,Apollo 12,US,1969,122,140,172
+(d) Passive seismic experiment,TRUE,,,Apollo 12,US,1969,122,140,172
 (d) Solar wind experiment,TRUE,,,Apollo 12,US,1969,123,141,173
 (e) Radioisotope Thermoelectric Generator Experiment,TRUE,,,Apollo 12,US,1969,124,142,174
 (e) Subthermal lon Detector / CCGE experiment,TRUE,,,Apollo 12,US,1969,125,143,175
@@ -180,11 +180,11 @@ Color Chart,TRUE,,,Apollo 12,US,1969,120,138,170
 "(a) Bag, assembly, LEC  Waist",TRUE,,,Apollo 12,US,1969,129,147,179
 (b) PLSS,TRUE,,,Apollo 12,US,1969,130,148,180
 (b) EVCS-1,TRUE,,,Apollo 12,US,1969,131,149,181
-(c) PLSS ,TRUE,,,Apollo 12,US,1969,132,150,182
+(c) PLSS,TRUE,,,Apollo 12,US,1969,132,150,182
 (c) EVCS-2,TRUE,,,Apollo 12,US,1969,133,151,183
 Astronaut Wings (C.C. Williams),TRUE,,,Apollo 12,US,1969,134,152,184
 Astronaut Wings (Alan Bean),TRUE,,,Apollo 12,US,1969,135,153,185
-Automatic Timer for Hasselblad ,TRUE,,,Apollo 12,US,1969,136,154,186
+Automatic Timer for Hasselblad,TRUE,,,Apollo 12,US,1969,136,154,186
 S-IVB,TRUE,-2.553,27.887,Apollo 13,US,1970,1,155,187
 Landing Location,TRUE,-3.4,-17.28,Apollo 14,US,1971,1,156,188
 S-IVB,TRUE,-8.179,26.031,Apollo 14,US,1971,2,157,189
@@ -223,7 +223,7 @@ Remote control unit- PLSS (-6),TRUE,,,Apollo 14,US,1971,31,186,218
 Defecation Collection Device,TRUE,,,Apollo 14,US,1971,35,190,222
 "Boots, Lunar",TRUE,,,Apollo 14,US,1971,36,191,223
 PLSS/EVCS assembly,TRUE,,,Apollo 14,US,1971,37,192,224
-PLSS/EVCS assembly ,TRUE,,,Apollo 14,US,1971,38,193,225
+PLSS/EVCS assembly,TRUE,,,Apollo 14,US,1971,38,193,225
 "Collection bag, Calibrated, PLSS Feedwater",TRUE,,,Apollo 14,US,1971,39,194,226
 "Collection bag, Calibrated, PLSS without Feedwater",TRUE,,,Apollo 14,US,1971,40,195,227
 "Bag, Jettison stowage",TRUE,,,Apollo 14,US,1971,41,196,228
@@ -251,16 +251,16 @@ Earplugs,TRUE,,,Apollo 14,US,1971,54,209,241
 "Strap, ECS LIOH canister",TRUE,,,Apollo 14,US,1971,63,218,250
 "Bag, Camera Mount Bracket",TRUE,,,Apollo 14,US,1971,64,219,251
 Hammock Assembly,TRUE,,,Apollo 14,US,1971,65,220,252
-Hammock Assembly ,TRUE,,,Apollo 14,US,1971,66,221,253
+Hammock Assembly,TRUE,,,Apollo 14,US,1971,66,221,253
 "Container, Buddy SLLSS Assembly-Stowage",TRUE,,,Apollo 14,US,1971,67,222,254
 "Bag, 16mm Camera-Stowage",TRUE,,,Apollo 14,US,1971,68,223,255
 Foam side,TRUE,,,Apollo 14,US,1971,69,224,256
-Foam side ,TRUE,,,Apollo 14,US,1971,70,225,257
+Foam side,TRUE,,,Apollo 14,US,1971,70,225,257
 Strap assembly,TRUE,,,Apollo 14,US,1971,71,226,258
 "Webbing, Tiedown-Contingency",TRUE,,,Apollo 14,US,1971,72,227,259
 "Pallet assembly, magnetometer ",TRUE,,,Apollo 14,US,1971,73,228,260
 Strao assembly,TRUE,,,Apollo 14,US,1971,74,229,261
-Mounting Assembly RTG Fuel Cask  ,TRUE,,,Apollo 14,US,1971,75,230,262
+Mounting Assembly RTG Fuel Cask,TRUE,,,Apollo 14,US,1971,75,230,262
 Fuel cask,TRUE,,,Apollo 14,US,1971,76,231,263
 Fuel capsule assembly,TRUE,,,Apollo 14,US,1971,77,232,264
 Pallet assembly No.1 (includes (c)),TRUE,,,Apollo 14,US,1971,78,233,265
@@ -268,7 +268,7 @@ Pallet assembly No.2 (includes (d)),TRUE,,,Apollo 14,US,1971,79,234,266
 Hammer,TRUE,,,Apollo 14,US,1971,80,235,267
 "Scoop, lunar sample (Large)",TRUE,,,Apollo 14,US,1971,81,236,268
 "Tool, extension",TRUE,,,Apollo 14,US,1971,82,237,269
-Tongs  ,TRUE,,,Apollo 14,US,1971,83,238,270
+Tongs,TRUE,,,Apollo 14,US,1971,83,238,270
 Gnomon,TRUE,,,Apollo 14,US,1971,84,239,271
 "Tool assembly, Trenching-Adjustable",TRUE,,,Apollo 14,US,1971,85,240,272
 "Scale, sample",TRUE,,,Apollo 14,US,1971,86,241,273
@@ -283,7 +283,7 @@ ASE cable anchor (Apollo sample Penetrometer),TRUE,,,Apollo 14,US,1971,88,243,27
 "(b) Cable, LM Color TV",TRUE,,,Apollo 14,US,1971,95,250,282
 "(b) Cover, LM TV lens",TRUE,,,Apollo 14,US,1971,96,251,283
 (c) Active Seismic Experiment,TRUE,,,Apollo 14,US,1971,97,252,284
-(c) Passive Seismic Experiment ,TRUE,,,Apollo 14,US,1971,98,253,285
+(c) Passive Seismic Experiment,TRUE,,,Apollo 14,US,1971,98,253,285
 (c) Charged Particule Lunar Environment Experiment,TRUE,,,Apollo 14,US,1971,99,254,286
 (d) Radioisotope Thermoelectric Generator RTG Experiment,TRUE,,,Apollo 14,US,1971,100,255,287
 (d) Superthermal Ion Detect/Cold Cathode Gag Experiment,TRUE,,,Apollo 14,US,1971,101,256,288
@@ -298,7 +298,7 @@ Golf balls,TRUE,,,Apollo 14,US,1971,109,264,296
 Javelin,TRUE,,,Apollo 14,US,1971,110,265,297
 Landing Location,TRUE,26.6,3.39,Apollo 15,US,1971,111,266,298
 S-IVB,TRUE,-1.288,-11.824,Apollo 15,US,1971,112,267,299
-Apollo 15 Subsatellite (PFS-2),TRUE,UNKNOWN,,Apollo 15,US,1971,113,268,300
+Apollo 15 Subsatellite (PFS-2),TRUE,,,Apollo 15,US,1971,113,268,300
 Passive Seismic Experiment (see below),TRUE,,,Apollo 15,US,1971,114,269,301
 Lunar Surface Magnetometer,TRUE,,,Apollo 15,US,1971,115,270,302
 Solar Wind Spectrometer (see below),TRUE,,,Apollo 15,US,1971,116,271,303
@@ -327,7 +327,7 @@ LM Descent Stage (plaque attached),TRUE,26.13222,3.63386,Apollo 15,US,1971,124,2
 "Tether, EVA Retractable (LMP)",TRUE,,,Apollo 15,US,1971,139,294,326
 "Camera, L.S. Electric",TRUE,,,Apollo 15,US,1971,140,295,327
 "Lens, 500mm",TRUE,,,Apollo 15,US,1971,141,296,328
-Ringsight  ,TRUE,,,Apollo 15,US,1971,142,297,329
+Ringsight,TRUE,,,Apollo 15,US,1971,142,297,329
 "Garment, Constant wear",TRUE,,,Apollo 15,US,1971,143,298,330
 "Garment, Liquid cooled",TRUE,,,Apollo 15,US,1971,144,299,331
 Remote Control Unit-PLSS (-7),TRUE,,,Apollo 15,US,1971,145,300,332
@@ -356,7 +356,7 @@ LCG Adapter,TRUE,,,Apollo 15,US,1971,158,313,345
 Buddy SLSS Assembly,TRUE,,,Apollo 15,US,1971,168,323,355
 Sleeping Restraint Assembly,TRUE,,,Apollo 15,US,1971,169,324,356
 "Tool Carrier, PLSS (CDR)",TRUE,,,Apollo 15,US,1971,170,325,357
-Tool Carrier PLSS (LMP) ,TRUE,,,Apollo 15,US,1971,171,326,358
+Tool Carrier PLSS (LMP),TRUE,,,Apollo 15,US,1971,171,326,358
 "Strap, LCRU Retainer",TRUE,,,Apollo 15,US,1971,172,327,359
 Helmet and LEVA Interim Stowage Container Assembly,TRUE,,,Apollo 15,US,1971,173,328,360
 "Food Assembly, LM(A/S)",TRUE,,,Apollo 15,US,1971,174,329,361
@@ -387,7 +387,7 @@ Hammock Assembly,TRUE,,,Apollo 15,US,1971,198,353,385
 Hammock Assembly,TRUE,,,Apollo 15,US,1971,199,354,386
 "Container, Buddy SLSS Assembly Stowage",TRUE,,,Apollo 15,US,1971,200,355,387
 Foam Side,TRUE,,,Apollo 15,US,1971,201,356,388
-Foam Side ,TRUE,,,Apollo 15,US,1971,202,357,389
+Foam Side,TRUE,,,Apollo 15,US,1971,202,357,389
 Strap Assembly,TRUE,,,Apollo 15,US,1971,203,358,390
 "Pallet, LRV Aft Chassis",TRUE,,,Apollo 15,US,1971,204,359,391
 "Pallet, Quad 3- Payload",TRUE,,,Apollo 15,US,1971,205,360,392
@@ -411,7 +411,7 @@ Tools ALSERP Deployment,TRUE,,,Apollo 15,US,1971,222,377,409
 Side/CCGE,TRUE,,,Apollo 15,US,1971,223,378,410
 "Tool, Extension",TRUE,,,Apollo 15,US,1971,224,379,411
 "Tongs, 32 inch",TRUE,,,Apollo 15,US,1971,225,380,412
-Gnomon  ,TRUE,,,Apollo 15,US,1971,226,381,413
+Gnomon,TRUE,,,Apollo 15,US,1971,226,381,413
 Lunar Geology Experiment Tool Carrier with tools,TRUE,,,Apollo 15,US,1971,227,382,414
 "Scoop, Adjustable Sampling",TRUE,,,Apollo 15,US,1971,228,383,415
 Hammer,TRUE,,,Apollo 15,US,1971,229,384,416
@@ -433,8 +433,8 @@ Hammer,TRUE,,,Apollo 15,US,1971,229,384,416
 "(d) Stowage Container, LCRU Ancillary Items",TRUE,,,Apollo 15,US,1971,245,400,432
 "(d) Batteries, LCRU",TRUE,,,Apollo 15,US,1971,246,401,433
 (d) Hi-Gain Antenna Assembly,TRUE,,,Apollo 15,US,1971,247,402,434
-(d) Lo-Gain Antenna Assembly ,TRUE,,,Apollo 15,US,1971,248,403,435
-(e) Large Base Assembly ,TRUE,,,Apollo 15,US,1971,249,404,436
+(d) Lo-Gain Antenna Assembly,TRUE,,,Apollo 15,US,1971,248,403,435
+(e) Large Base Assembly,TRUE,,,Apollo 15,US,1971,249,404,436
 "(e) Cone, .2",TRUE,,,Apollo 15,US,1971,250,405,437
 "(e) Cone, .5",TRUE,,,Apollo 15,US,1971,251,406,438
 "(e) Cone Assembly, 1.0",TRUE,,,Apollo 15,US,1971,252,407,439
@@ -449,8 +449,8 @@ Microfilm roll containing Apollo 11 Manned Flight Awareness booklet,TRUE,,,Apoll
 Personal Preference Kits left in Lunar Module,TRUE,,,Apollo 15,US,1971,261,416,448
 Document proclaiming “University of Michigan Alumni of the Moon”,TRUE,,,Apollo 15,US,1971,262,417,449
 Landing Location,TRUE,-8.973,15.31,Apollo 16,US,1972,1,418,450
-Apollo 16 Subsatellite (PFS-2),TRUE,Lunar Far Side,,Apollo 16,US,1972,2,419,451
-Ascent Stage,TRUE,UNKNOWN,,Apollo 16,US,1972,3,420,452
+Apollo 16 Subsatellite (PFS-2),TRUE,,,Apollo 16,US,1972,2,419,451
+Ascent Stage,TRUE,,,Apollo 16,US,1972,3,420,452
 Passive Seismic Experiment (see below),TRUE,,,Apollo 16,US,1972,4,421,453
 Active Seismic Experiment (see below),TRUE,,,Apollo 16,US,1972,5,422,454
 Lunar Surface Magnetomet (see below),TRUE,,,Apollo 16,US,1972,6,423,455
@@ -477,7 +477,7 @@ PLSS/EVCS Assy.-LMP (includes (b)),TRUE,,,Apollo 16,US,1972,26,443,475
 "PLSS/EVCS Assy., CDR (includes (c)) ",TRUE,,,Apollo 16,US,1972,27,444,476
 "Bag, Jettison stowage",TRUE,,,Apollo 16,US,1972,28,445,477
 "Dispenser, Tissue",TRUE,,,Apollo 16,US,1972,29,446,478
-LCG Adapter  ,TRUE,,,Apollo 16,US,1972,30,447,479
+LCG Adapter,TRUE,,,Apollo 16,US,1972,30,447,479
 "Jacket Assy., ICG",TRUE,,,Apollo 16,US,1972,31,448,480
 "Trouser Assy., ICG",TRUE,,,Apollo 16,US,1972,32,449,481
 "Boot, Right , ICG ",TRUE,,,Apollo 16,US,1972,33,450,482
@@ -493,7 +493,7 @@ Sleeping Restraint Assembly,TRUE,,,Apollo 16,US,1972,39,456,488
 Helmet and LEVA Interim stowage container Assembly,TRUE,,,Apollo 16,US,1972,43,460,492
 Food Assy. LM (A/S),TRUE,,,Apollo 16,US,1972,44,461,493
 In-Suit Beverage Assembly,TRUE,,,Apollo 16,US,1972,45,462,494
-In-Suit Food Bar Assembly ,TRUE,,,Apollo 16,US,1972,46,463,495
+In-Suit Food Bar Assembly,TRUE,,,Apollo 16,US,1972,46,463,495
 "Food Assy., LM (D/S Pallet No. 1)",TRUE,,,Apollo 16,US,1972,47,464,496
 "Food Assy., LM (D/S Pallet No. 2)",TRUE,,,Apollo 16,US,1972,48,465,497
 "Wet Wipes, Facial",TRUE,,,Apollo 16,US,1972,49,466,498
@@ -520,7 +520,7 @@ Urine Receptacle System,TRUE,,,Apollo 16,US,1972,68,485,517
 "Pallet Assy. No. 2, Equipment Transfer",TRUE,,,Apollo 16,US,1972,70,487,519
 "Pallet Assy. No. 4, Equipment Transfer",TRUE,,,Apollo 16,US,1972,71,488,520
 Hammock Assembly,TRUE,,,Apollo 16,US,1972,72,489,521
-Hammock Assembly ,TRUE,,,Apollo 16,US,1972,73,490,522
+Hammock Assembly,TRUE,,,Apollo 16,US,1972,73,490,522
 "Container, Buddy SLSS Assy., stowage",TRUE,,,Apollo 16,US,1972,74,491,523
 "Pallet, LRV Aft Chassis",TRUE,,,Apollo 16,US,1972,75,492,524
 "Pallet, Quad 3- Payload",TRUE,,,Apollo 16,US,1972,76,493,525
@@ -534,8 +534,8 @@ Hammock Assembly ,TRUE,,,Apollo 16,US,1972,73,490,522
 "Retainer Assy., Lower",TRUE,,,Apollo 16,US,1972,84,501,533
 "Retainer Assy., Upper ",TRUE,,,Apollo 16,US,1972,85,502,534
 "Cover Assy., Retainer ",TRUE,,,Apollo 16,US,1972,86,503,535
-Spacer (Bore and Core Stem Stowage) ,TRUE,,,Apollo 16,US,1972,87,504,536
-Spacer (Bore and Core Stem Stowage) ,TRUE,,,Apollo 16,US,1972,88,505,537
+Spacer (Bore and Core Stem Stowage),TRUE,,,Apollo 16,US,1972,87,504,536
+Spacer (Bore and Core Stem Stowage),TRUE,,,Apollo 16,US,1972,88,505,537
 "Stowage Retainer, GCTA Sunshade",TRUE,,,Apollo 16,US,1972,89,506,538
 "Stowage Strap Assy., GCTA Sunshade",TRUE,,,Apollo 16,US,1972,90,507,539
 "Mounting Assy., Rtg. Fuel Cask",TRUE,,,Apollo 16,US,1972,91,508,540
@@ -545,7 +545,7 @@ Pallet Assy. No. 1 (includes (f)),TRUE,,,Apollo 16,US,1972,94,511,543
 Pallet Assy. No. 2 (includes (g)),TRUE,,,Apollo 16,US,1972,95,512,544
 Tool Extension,TRUE,,,Apollo 16,US,1972,96,513,545
 "Tongs, 32 inch",TRUE,,,Apollo 16,US,1972,97,514,546
-Gnomon  ,TRUE,,,Apollo 16,US,1972,98,515,547
+Gnomon,TRUE,,,Apollo 16,US,1972,98,515,547
 Cosmic Ray Detector Package,TRUE,,,Apollo 16,US,1972,99,516,548
 "Magnetometer, Lunar Portable",TRUE,,,Apollo 16,US,1972,100,517,549
 Lunar Geology Exper. Tool Carrier (includes (h)),TRUE,,,Apollo 16,US,1972,101,518,550
@@ -571,7 +571,7 @@ Accessory Holder Assy. (Penetrometer),TRUE,,,Apollo 16,US,1972,105,522,554
 "(d) stowage container, LCRU ancillary items",TRUE,,,Apollo 16,US,1972,121,538,570
 "(e) Batteries, LCRU",TRUE,,,Apollo 16,US,1972,122,539,571
 (e) Antenna assembly hi gain,TRUE,,,Apollo 16,US,1972,123,540,572
-(e) Antenna assembly lo gain ,TRUE,,,Apollo 16,US,1972,124,541,573
+(e) Antenna assembly lo gain,TRUE,,,Apollo 16,US,1972,124,541,573
 "(f) Experiment, passive seismic",TRUE,,,Apollo 16,US,1972,125,542,574
 "(f) Experiment, Active seismic",TRUE,,,Apollo 16,US,1972,126,543,575
 "(f) Experiment, heat flow  ",TRUE,,,Apollo 16,US,1972,127,544,576
@@ -583,7 +583,7 @@ Accessory Holder Assy. (Penetrometer),TRUE,,,Apollo 16,US,1972,105,522,554
 Large Base Assembly,TRUE,,,Apollo 16,US,1972,133,550,582
 "Cone, .20",TRUE,,,Apollo 16,US,1972,134,551,583
 "Cone Assembly, 1.0",TRUE,,,Apollo 16,US,1972,135,552,584
-Cover Assembly  ,TRUE,,,Apollo 16,US,1972,136,553,585
+Cover Assembly,TRUE,,,Apollo 16,US,1972,136,553,585
 "(a) Camera , 16mm, battery operated",TRUE,,,Apollo 16,US,1972,137,554,586
 "(a) Lens, 10mm, 16mm battery operated camera",TRUE,,,Apollo 16,US,1972,138,555,587
 "(a) Handle, 16mm battery operated camera",TRUE,,,Apollo 16,US,1972,139,556,588
@@ -606,7 +606,7 @@ Cover Assembly  ,TRUE,,,Apollo 16,US,1972,136,553,585
 "Cone, .5",TRUE,,,Apollo 16,US,1972,156,573,605
 "Camera, L.S. Electric",TRUE,,,Apollo 16,US,1972,157,574,606
 "Lens , 500mm",TRUE,,,Apollo 16,US,1972,158,575,607
-Ringsight  ,TRUE,,,Apollo 16,US,1972,159,576,608
+Ringsight,TRUE,,,Apollo 16,US,1972,159,576,608
 "Shelf, interim stowage",TRUE,,,Apollo 16,US,1972,160,577,609
 "Garment, liquid cooling",TRUE,,,Apollo 16,US,1972,161,578,610
 Remote control unit-PLSS,TRUE,,,Apollo 16,US,1972,162,579,611
@@ -621,10 +621,10 @@ Lifeline (lightweight),TRUE,,,Apollo 16,US,1972,170,587,619
 "Bag, deployment, lifeline",TRUE,,,Apollo 16,US,1972,171,588,620
 "Tether, waist, EVA, left ",TRUE,,,Apollo 16,US,1972,172,589,621
 "Tether, waist, EVA, right",TRUE,,,Apollo 16,US,1972,173,590,622
-Straps  ,TRUE,,,Apollo 16,US,1972,174,591,623
+Straps,TRUE,,,Apollo 16,US,1972,174,591,623
 "Lifeline, lunarnar equipment (LELL)",TRUE,,,Apollo 16,US,1972,175,592,624
 "(h) Scoop, large adjustable",TRUE,,,Apollo 16,US,1972,176,593,625
-(h) Hammer  ,TRUE,,,Apollo 16,US,1972,177,594,626
+(h) Hammer,TRUE,,,Apollo 16,US,1972,177,594,626
 "(h) Tool Assy., drive tube",TRUE,,,Apollo 16,US,1972,178,595,627
 Charles Duke family photograph,TRUE,,,Apollo 16,US,1972,179,596,628
 Silver medallion for 25th anniversary of U.S. Air Force,TRUE,,,Apollo 16,US,1972,180,597,629
@@ -655,10 +655,10 @@ Tether EVA Retractable,TRUE,,,Apollo 17,US,1972,204,621,653
 "Brush, Lens",TRUE,,,Apollo 17,US,1972,205,622,654
 "Camera, L.S. Electric",TRUE,,,Apollo 17,US,1972,206,623,655
 "Lens, 500mm",TRUE,,,Apollo 17,US,1972,207,624,656
-Ringsight  ,TRUE,,,Apollo 17,US,1972,208,625,657
+Ringsight,TRUE,,,Apollo 17,US,1972,208,625,657
 "Shelf, Interim stowage",TRUE,,,Apollo 17,US,1972,209,626,658
 Wrist Mirror,TRUE,,,Apollo 17,US,1972,210,627,659
-Watchband ,TRUE,,,Apollo 17,US,1972,211,628,660
+Watchband,TRUE,,,Apollo 17,US,1972,211,628,660
 Remote Control unit- PLSS,TRUE,,,Apollo 17,US,1972,212,629,661
 "Bracket, camera mount (-7)",TRUE,,,Apollo 17,US,1972,213,630,662
 "Cartridge Cont. Assy., PLSS/LIOH",TRUE,,,Apollo 17,US,1972,214,631,663
@@ -671,7 +671,7 @@ Defecation Collection Device,TRUE,,,Apollo 17,US,1972,218,635,667
 "Kit, LEC waist tether (a)",TRUE,,,Apollo 17,US,1972,221,638,670
 "Lift Line, Lunar equipment (LELL)",TRUE,,,Apollo 17,US,1972,222,639,671
 PLSS/EVCS Assy.-LMP,TRUE,,,Apollo 17,US,1972,223,640,672
-PLSS ,TRUE,,,Apollo 17,US,1972,224,641,673
+PLSS,TRUE,,,Apollo 17,US,1972,224,641,673
 EVCS-2,TRUE,,,Apollo 17,US,1972,225,642,674
 "Battery, PLSS",TRUE,,,Apollo 17,US,1972,226,643,675
 "Cartridge, LIOH",TRUE,,,Apollo 17,US,1972,227,644,676
@@ -688,7 +688,7 @@ EVCS-1,TRUE,,,Apollo 17,US,1972,233,650,682
 "Cover, Electrical connector, Dust",TRUE,,,Apollo 17,US,1972,238,655,687
 "Bag, Jettison stowage",TRUE,,,Apollo 17,US,1972,239,656,688
 "Dispenser, Tissue",TRUE,,,Apollo 17,US,1972,240,657,689
-LCG Adapter  ,TRUE,,,Apollo 17,US,1972,241,658,690
+LCG Adapter,TRUE,,,Apollo 17,US,1972,241,658,690
 "Jacket assy., ICG",TRUE,,,Apollo 17,US,1972,242,659,691
 "Trousear assy., ICG",TRUE,,,Apollo 17,US,1972,243,660,692
 "Boot, right ICG",TRUE,,,Apollo 17,US,1972,244,661,693
@@ -707,7 +707,7 @@ Helpmet and LEVA interim stowage container assembly,TRUE,,,Apollo 17,US,1972,255
 "Lanyard, IV ITLSA Donning",TRUE,,,Apollo 17,US,1972,257,674,706
 "Bag, LM Personal Hygiene Kit",TRUE,,,Apollo 17,US,1972,258,675,707
 Nail Clippers,TRUE,,,Apollo 17,US,1972,259,676,708
-Soap  ,TRUE,,,Apollo 17,US,1972,260,677,709
+Soap,TRUE,,,Apollo 17,US,1972,260,677,709
 "Food Assy., LM (A/S)",TRUE,,,Apollo 17,US,1972,261,678,710
 "Food Assy., LM (D/S Pallet No. 1)",TRUE,,,Apollo 17,US,1972,262,679,711
 "Wet Wipes, Facial",TRUE,,,Apollo 17,US,1972,263,680,712
@@ -743,8 +743,8 @@ Urine receptacle system,TRUE,,,Apollo 17,US,1972,292,709,741
 "Pallet assy. No.1, Equipment transfer",TRUE,,,Apollo 17,US,1972,293,710,742
 "Pallet assy. No.2, Equipment transfer",TRUE,,,Apollo 17,US,1972,294,711,743
 "Pallet assy. No.4, Equipment transfer",TRUE,,,Apollo 17,US,1972,295,712,744
-Hammock assembly ,TRUE,,,Apollo 17,US,1972,296,713,745
-Hammock assembly ,TRUE,,,Apollo 17,US,1972,297,714,746
+Hammock assembly,TRUE,,,Apollo 17,US,1972,296,713,745
+Hammock assembly,TRUE,,,Apollo 17,US,1972,297,714,746
 "Container Buddy SLSS assy., Stowage",TRUE,,,Apollo 17,US,1972,298,715,747
 "Pallet, LRV aft chassis",TRUE,,,Apollo 17,US,1972,299,716,748
 "Pallet, Quad 3- Payload",TRUE,,,Apollo 17,US,1972,300,717,749
@@ -758,8 +758,8 @@ Hammock assembly ,TRUE,,,Apollo 17,US,1972,297,714,746
 "Retainer assy., Lower",TRUE,,,Apollo 17,US,1972,308,725,757
 "Retainer assy., Upper ",TRUE,,,Apollo 17,US,1972,309,726,758
 "Cover assy., Retainer",TRUE,,,Apollo 17,US,1972,310,727,759
-Spacer (Core and Bore stem stowage) ,TRUE,,,Apollo 17,US,1972,311,728,760
-Spacer (Core and Bore stem stowage) ,TRUE,,,Apollo 17,US,1972,312,729,761
+Spacer (Core and Bore stem stowage),TRUE,,,Apollo 17,US,1972,311,728,760
+Spacer (Core and Bore stem stowage),TRUE,,,Apollo 17,US,1972,312,729,761
 "Stowage Retainer, GCTA sunshade",TRUE,,,Apollo 17,US,1972,313,730,762
 "Stowage strap assy., GCTA sunshade",TRUE,,,Apollo 17,US,1972,314,731,763
 "Bag, Neutron probe, Thermal",TRUE,,,Apollo 17,US,1972,315,732,764
@@ -776,7 +776,7 @@ Heat flow experiment (S-037),TRUE,,,Apollo 17,US,1972,324,741,773
 "Tools, ALSEP deployment",TRUE,,,Apollo 17,US,1972,326,743,775
 Lunar ejecta & micrometeoroid experim. (S-202),TRUE,,,Apollo 17,US,1972,327,744,776
 Tool extension,TRUE,,,Apollo 17,US,1972,328,745,777
-Tongs  ,TRUE,,,Apollo 17,US,1972,329,746,778
+Tongs,TRUE,,,Apollo 17,US,1972,329,746,778
 Gnomon,TRUE,,,Apollo 17,US,1972,330,747,779
 "Scoop, large adjustable",TRUE,,,Apollo 17,US,1972,331,748,780
 Hammer,TRUE,,,Apollo 17,US,1972,332,749,781
@@ -801,7 +801,7 @@ Earplug and overwrap pouch assy.,TRUE,,,Apollo 17,US,1972,348,765,797
 "(a) Bag Assy., LEC+wt.",TRUE,,,Apollo 17,US,1972,351,768,800
 "Garment, constant wear",TRUE,,,Apollo 17,US,1972,352,769,801
 "Garment, liquid cooling",TRUE,,,Apollo 17,US,1972,353,770,802
-Explorer 49 (RAE-B),FALSE,UNKNOWN,,Non-Apollo,US,1973,1,771,803
-Lunar Prospector,FALSE,UNKNOWN,,Non-Apollo,US,1998,1,772,804
+Explorer 49 (RAE-B),FALSE,,,Non-Apollo,US,1973,1,771,803
+Lunar Prospector,FALSE,,,Non-Apollo,US,1998,1,772,804
 LCROSS Shepherding Spacecraft,FALSE,-84.72,-49.62,Non-Apollo,US,2009,1,773,805
 LCROSS Centaur,FALSE,-84.9,-35.5,Non-Apollo,US,2009,2,774,806
