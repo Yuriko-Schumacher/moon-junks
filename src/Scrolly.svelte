@@ -77,13 +77,14 @@
 
   afterUpdate(() => {
     // ----- TOOLTIP -----
-    const backgroundContainer = d3.select(".background-container")
+    const backgroundContainer = d3.select(".scrolly__2d-moon").select(".background-container")
     backgroundContainer.style("z-index", "999").style("pointer-events", "auto")
     const circles = d3.select(".scrolly-circles").selectAll("circle")
     const tooltip = d3.select(".tooltip__2d")
     circles.on("mouseover", function(e) {
       let id = d3.select(this).attr("id");
       let thisD = data.filter(d => d.id === +id)[0]
+      console.log(e)
       d3.select(this).attr('stroke-width', "5")
       tooltip
         .style("display", "block")
@@ -282,180 +283,182 @@
   } 
 </script>
 
-<Scroller top="{0}" bottom="{1}" bind:index bind:offset bind:progress>
-  <div class="background" slot="background">
-    <div class="tooltip tooltip__2d">
-      <strong><span id="object">Object</span></strong
-      ><br />
-      <span id="country">Country</span>
-      <span id="category">Category</span><br />
-      <span id="year">Year</span>
-    </div>
-    <div
-      class="rasterMoon"
-      style="opacity: {$rasterOpacity.near}">
-      <canvas
-        width={width}
-        height={height}
-        id="raster-0"
-      ></canvas>
-      <svg 
-        transform="translate({margin.l}, {margin.t})"
-        width="{innerWidth}"
-        height="{innerHeight}">
-        <defs>
-          <mask id="moon-near">
-              <rect
-                x="0"
-                y="0"
-                width="{innerWidth}"
-                height="{innerHeight}"
-                fill="white"
-              ></rect>
-              <circle
-                cx="{innerWidth / 2}"
-                cy="{innerHeight / 2}"
-                r="{innerWidth > innerHeight ? innerHeight / 2 : innerWidth / 2}"/>
-          </mask>
-        </defs>
-        <rect
-          x="0"
-          y="0"
+<div class="scrolly__2d-moon">
+  <Scroller top="{0}" bottom="{1}" bind:index bind:offset bind:progress>
+    <div class="background" slot="background">
+      <div class="tooltip tooltip__2d">
+        <strong><span id="object">Object</span></strong
+        ><br />
+        <span id="country">Country</span>
+        <span id="category">Category</span><br />
+        <span id="year">Year</span>
+      </div>
+      <div
+        class="rasterMoon"
+        style="opacity: {$rasterOpacity.near}">
+        <canvas
+          width={width}
+          height={height}
+          id="raster-0"
+        ></canvas>
+        <svg 
+          transform="translate({margin.l}, {margin.t})"
           width="{innerWidth}"
-          height="{innerHeight}"
-          fill="rgb(0, 0, 0)"
-          mask="url(#moon-near)"
-        ></rect>
+          height="{innerHeight}">
+          <defs>
+            <mask id="moon-near">
+                <rect
+                  x="0"
+                  y="0"
+                  width="{innerWidth}"
+                  height="{innerHeight}"
+                  fill="white"
+                ></rect>
+                <circle
+                  cx="{innerWidth / 2}"
+                  cy="{innerHeight / 2}"
+                  r="{innerWidth > innerHeight ? innerHeight / 2 : innerWidth / 2}"/>
+            </mask>
+          </defs>
+          <rect
+            x="0"
+            y="0"
+            width="{innerWidth}"
+            height="{innerHeight}"
+            fill="rgb(0, 0, 0)"
+            mask="url(#moon-near)"
+          ></rect>
+        </svg>
+      </div>
+  
+      <div
+        class="rasterMoon"
+        style="opacity: {$rasterOpacity.far}">
+        <canvas
+          width={width}
+          height={height}
+          id="raster-1"
+        ></canvas>
+        <svg 
+          transform="translate({margin.l}, {margin.t})"
+          width="{innerWidth}"
+          height="{innerHeight}">
+          <defs>
+            <mask id="moon-far">
+                <rect
+                  x="0"
+                  y="0"
+                  width="{innerWidth}"
+                  height="{innerHeight}"
+                  fill="white"
+                ></rect>
+                <circle
+                  cx="{innerWidth / 2}"
+                  cy="{innerHeight / 2}"
+                  r="{innerWidth > innerHeight ? innerHeight / 2 : innerWidth / 2}"/>
+            </mask>
+          </defs>
+          <rect
+            x="0"
+            y="0"
+            width="{innerWidth}"
+            height="{innerHeight}"
+            fill="rgb(0, 0, 0)"
+            mask="url(#moon-far)"
+          ></rect>
+        </svg>
+      </div>
+  
+      <svg
+        width="{window.innerWidth / 2}"
+        height="{window.innerHeight}"
+        class="scrolly-circles">
+        <text
+          x="{margin.l}"
+          y="{margin.t}"
+          fill="white"
+          class="chart-subtitle"
+          style="opacity: {$rasterOpacity.near}"
+        >Near side</text>
+        <text
+          x="{margin.l}"
+          y="{margin.t + height}"
+          fill="white"
+          class="chart-subtitle"
+          style="opacity: {$rasterOpacity.far}"
+        >Far side</text>
+        <g>
+          {#each $circles as {cx, cy, cr, opacity, r, g, b, id}} 
+            <circle
+              style="{move(cx, cy)}"
+              r="{cr}"
+              stroke="black"
+              stroke-width="1"
+              stroke-opacity="{opacity}"
+              fill="rgb({r}, {g}, {b})"
+              fill-opacity="{opacity}"
+              id="{id}"
+            />
+          {/each}
+        </g>
       </svg>
     </div>
-
-    <div
-      class="rasterMoon"
-      style="opacity: {$rasterOpacity.far}">
-      <canvas
-        width={width}
-        height={height}
-        id="raster-1"
-      ></canvas>
-      <svg 
-        transform="translate({margin.l}, {margin.t})"
-        width="{innerWidth}"
-        height="{innerHeight}">
-        <defs>
-          <mask id="moon-far">
-              <rect
-                x="0"
-                y="0"
-                width="{innerWidth}"
-                height="{innerHeight}"
-                fill="white"
-              ></rect>
-              <circle
-                cx="{innerWidth / 2}"
-                cy="{innerHeight / 2}"
-                r="{innerWidth > innerHeight ? innerHeight / 2 : innerWidth / 2}"/>
-          </mask>
-        </defs>
-        <rect
-          x="0"
-          y="0"
-          width="{innerWidth}"
-          height="{innerHeight}"
-          fill="rgb(0, 0, 0)"
-          mask="url(#moon-far)"
-        ></rect>
-      </svg>
+  
+    <div class="foreground" slot="foreground">
+      <section class="step" data-section-id="0">
+        <p>
+          This side of the Moon may look familiar. This is the near side, and we can only see this side of the Moon.
+        </p>
+      </section>
+      <section class="step" data-section-id="1">
+        <p>
+          And the image below shows the far side. From Earth, we’d need to go around the Moon to reach this side.
+        </p>
+      </section>
+      <section class="step" data-section-id="2">
+        <p>
+          Chang’e 4’s landing site is spotted here. The rover Yutu 2, as well as the “mysterious hut” spotted by the rover is a few hundred meters away from the landing location.
+        </p>
+      </section>
+      <section class="step" data-section-id="3">
+        <p>
+          The first human-made object to touch the Moon was in 1959, the Soviet Union's Luna 2.
+        </p>
+      </section>
+      <section class="step" data-section-id="4">
+        <p>
+          In NASA’s catalogue of man-made objects, out of over 800 objects and landing points, 64 include available locations. 
+        </p>
+      </section>
+      <section class="step" data-section-id="5">
+        <p>
+          Out of 741 objects without location informations, 724 were brought by Apollo missions in the late 1960s and early 1970s. Objects brought through Apollo missions and their landing locations are shown here.
+        </p>
+      </section>
+      <section class="step" data-section-id="6">
+        <p>
+          Overall, there have been far less human activities on the far side. The hurdles are simply higher on far-side missions.
+        </p>
+      </section>
+      <section class="step" data-section-id="7">
+        <p>
+          More than 96% of those objects were left by the U.S., followed by the Soviet Union. Other countries include China, India, Japan, and the European Space Agency (ESA).
+        </p>
+      </section>
+      <section class="step" data-section-id="8">
+        <p>
+          In the late 60s to early 70s, the Soviet Union and the U.S. were in the “Space Race” -- the competition during the Cold War to achieve superior spaceflight capability.
+        </p>
+        <p>
+          The countries continuously conducted space missions, and a vast number of man-made objects were left on the Moon.
+        </p>
+        <p>
+          There was a huge spike in the number of human artifacts on the moon in the late 1960s and 1970s.
+        </p>
+      </section>
     </div>
-
-    <svg
-      width="{window.innerWidth / 2}"
-      height="{window.innerHeight}"
-      class="scrolly-circles">
-      <text
-        x="{margin.l}"
-        y="{margin.t}"
-        fill="white"
-        class="chart-subtitle"
-        style="opacity: {$rasterOpacity.near}"
-      >Near side</text>
-      <text
-        x="{margin.l}"
-        y="{margin.t + height}"
-        fill="white"
-        class="chart-subtitle"
-        style="opacity: {$rasterOpacity.far}"
-      >Far side</text>
-      <g>
-        {#each $circles as {cx, cy, cr, opacity, r, g, b, id}} 
-          <circle
-            style="{move(cx, cy)}"
-            r="{cr}"
-            stroke="black"
-            stroke-width="1"
-            stroke-opacity="{opacity}"
-            fill="rgb({r}, {g}, {b})"
-            fill-opacity="{opacity}"
-            id="{id}"
-          />
-        {/each}
-      </g>
-    </svg>
-  </div>
-
-  <div class="foreground" slot="foreground">
-    <section class="step" data-section-id="0">
-      <p>
-        This side of the Moon may look familiar. This is the near side, and we can only see this side of the Moon.
-      </p>
-    </section>
-    <section class="step" data-section-id="1">
-      <p>
-        And the image below shows the far side. From Earth, we’d need to go around the Moon to reach this side.
-      </p>
-    </section>
-    <section class="step" data-section-id="2">
-      <p>
-        Chang’e 4’s landing site is spotted here. The rover Yutu 2, as well as the “mysterious hut” spotted by the rover is a few hundred meters away from the landing location.
-      </p>
-    </section>
-    <section class="step" data-section-id="3">
-      <p>
-        The first human-made object to touch the Moon was in 1959, the Soviet Union's Luna 2.
-      </p>
-    </section>
-    <section class="step" data-section-id="4">
-      <p>
-        In NASA’s catalogue of man-made objects, out of over 800 objects and landing points, 64 include available locations. 
-      </p>
-    </section>
-    <section class="step" data-section-id="5">
-      <p>
-        Out of 741 objects without location informations, 724 were brought by Apollo missions in the late 1960s and early 1970s. Objects brought through Apollo missions and their landing locations are shown here.
-      </p>
-    </section>
-    <section class="step" data-section-id="6">
-      <p>
-        Overall, there have been far less human activities on the far side. The hurdles are simply higher on far-side missions.
-      </p>
-    </section>
-    <section class="step" data-section-id="7">
-      <p>
-        More than 96% of those objects were left by the U.S., followed by the Soviet Union. Other countries include China, India, Japan, and the European Space Agency (ESA).
-      </p>
-    </section>
-    <section class="step" data-section-id="8">
-      <p>
-        In the late 60s to early 70s, the Soviet Union and the U.S. were in the “Space Race” -- the competition during the Cold War to achieve superior spaceflight capability.
-      </p>
-      <p>
-        The countries continuously conducted space missions, and a vast number of man-made objects were left on the Moon.
-      </p>
-      <p>
-        There was a huge spike in the number of human artifacts on the moon in the late 1960s and 1970s.
-      </p>
-    </section>
-  </div>
-</Scroller>
+  </Scroller>
+</div>
 
 <style>
 
@@ -469,12 +472,12 @@
     left: 0;
   }
 
-  .tooltip {
+  .tooltip__2d {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.9);
     color: black;
     padding: 0.8em 1em;
     border-radius: 0.3em;

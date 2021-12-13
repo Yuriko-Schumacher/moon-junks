@@ -132,7 +132,7 @@
     };
 
     const raycaster = new THREE.Raycaster();
-    const tooltip = document.querySelector(".tooltip");
+    const tooltip = document.querySelector(".tooltip__3d");
     const object = document.querySelector("#object");
     const category = document.querySelector("#category");
     const country = document.querySelector("#country");
@@ -219,7 +219,7 @@
 <h1>
   Explore the man-made objects on the moon!
 </h1>
-<div class="tooltip">
+<div class="tooltip tooltip__3d">
   <strong><span id="object">Object</span></strong
   ><br />
   <span id="country">Country</span>
@@ -240,7 +240,7 @@
     height: 100vh;
   }
 
-  .tooltip {
+  .tooltip__3d {
     display: none;
     position: fixed;
     top: 0;
