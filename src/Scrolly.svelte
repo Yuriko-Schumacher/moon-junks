@@ -3,6 +3,8 @@
   import * as d3 from "d3"
   import Scroller from "@sveltejs/svelte-scroller";
   import { spring } from 'svelte/motion';
+import Main from './Main.svelte';
+import { Line } from 'three';
 
   export let data;
   export let geo;
@@ -84,7 +86,6 @@
     circles.on("mouseover", function(e) {
       let id = d3.select(this).attr("id");
       let thisD = data.filter(d => d.id === +id)[0]
-      console.log(e)
       d3.select(this).attr('stroke-width', "5")
       tooltip
         .style("display", "block")
@@ -143,6 +144,9 @@
     });
   let newRasterOpacity;
 
+  let waffleOpacity;
+  let waffleText;
+
   $: {
     if (index === 0) {
       newRasterOpacity = {
@@ -150,8 +154,8 @@
         far: 0
       }
       newCircles = data.map((d) => ({
-        cx: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: 0,
         r: colors.yellow.r,
@@ -159,6 +163,8 @@
         b: colors.yellow.b,
         id: d.id,
       }))
+      waffleOpacity = 0;
+      waffleText = "";
     } else
     if (index === 1) {
       newRasterOpacity = {
@@ -166,8 +172,8 @@
         far: 1
       }
       newCircles = data.map((d) => ({
-        cx: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: 0,
         r: colors.yellow.r,
@@ -182,8 +188,8 @@
         far: 1
       }
       newCircles = data.map((d) => ({
-        cx: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: d.object === "Chang'e 4" ? 1 : 0,
         r: colors.yellow.r,
@@ -198,8 +204,8 @@
         far: 0.5
       }
       newCircles = data.map((d) => ({
-        cx: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: d.launch_year === 1959 ? 1 : 0,
         r: colors.yellow.r,
@@ -214,8 +220,8 @@
         far: 1
       }
       newCircles = data.map((d) => ({
-        cx: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: d.east === 0 || d.object === "Chang'e 4" ? 0 : 0.8,
         r: colors.yellow.r,
@@ -223,6 +229,8 @@
         b: colors.yellow.b,
         id: d.id,
       }))
+      waffleOpacity = 0;
+      waffleText = "";
     } else 
     if (index === 5) {
       newRasterOpacity = {
@@ -230,8 +238,8 @@
         far: 1
       }
       newCircles = data.map((d) => ({
-        cx: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
-        cy: Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
+        cx: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
+        cy: d.east === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
         opacity: d.is_apollo === "TRUE" && d.east !== 0 ? 0.8 : 0,
         r: colors.yellow.r,
@@ -241,42 +249,45 @@
       }))
     } else 
     if (index === 7) {
-      xScale = d3.scaleLinear().domain([1, 30]).range([margin.l, width - 300])
-      yScale = d3.scaleLinear().domain([1958, 2009]).range([height * 2 - margin.b, margin.t])
+      xScale = d3.scaleLinear().domain([0, 100]).range([150, width - margin.r])
+      yScale = d3.scaleLinear().domain([1958, 2009]).range([margin.t + 50, height * 2 - 100])
 
       newRasterOpacity = {
         near: 0,
         far: 0
       }
       newCircles = data.map((d) => ({
-        cx: d.by_year !== "NA" ? xScale(d.by_year % 50) : 0,
-        cy: d.by_year !== "NA" ? yScale(d.launch_year) : 0,
-        cr: innerWidth / 130,
+        cx: d.by_year !== "NA" ? xScale((d.by_year - 1) % 100) : 0,
+        cy: d.by_year !== "NA" ? yScale(d.launch_year) + (Math.floor((d.by_year - 1) / 100) + 1) * innerWidth / 350 * 2 : 0,
+        cr: innerWidth / 350,
         opacity: d.by_year === "NA" ? 0 : 0.8,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
       }))
+      waffleOpacity = 1;
+      waffleText = "Objects landed on the Moon by year";
     } else 
     if (index === 8) {
-      xScale = d3.scaleLinear().domain([1, 30]).range([margin.l, width - 300])
-      yScale = d3.scaleBand().domain(["US", "Soviet", "India", "China", "Japan", "ESA"]).range([height * 2 - margin.b, margin.t])
+      xScale = d3.scaleLinear().domain([0, 100]).range([150, width - margin.r])
+      yScale = d3.scaleBand().domain(["US", "Soviet", "Japan", "India", "China", "ESA"]).range([margin.t + 50, height * 2 - 50])
 
       newRasterOpacity = {
         near: 0,
         far: 0
       }
       newCircles = data.map((d) => ({
-        cx: d.by_country !== "NA" ? xScale(d.by_country % 50) : 0,
-        cy: d.by_country !== "NA" ? yScale(d.country) : 0,
-        cr: innerWidth / 130,
+        cx: d.by_country !== "NA" ? xScale((d.by_country - 1) % 100) : 0,
+        cy: d.by_country !== "NA" ? yScale(d.country) + (Math.floor((d.by_country - 1) / 100) + 1) * innerWidth / 350 * 2 : 0,
+        cr: innerWidth / 350,
         opacity: d.by_year === "NA" ? 0 : 0.8,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
       }))
+      waffleText = "Objects landed on the Moon by country";
     }
     rasterOpacity.set(newRasterOpacity)
     circles.set(newCircles)
@@ -387,6 +398,24 @@
           class="chart-subtitle"
           style="opacity: {$rasterOpacity.far}"
         >Far side</text>
+        <text
+          x="{150}"
+          y="{margin.t}"
+          fill="white"
+          class="chart-subtitle"
+          style="opacity: {waffleOpacity}"
+        >{waffleText}</text>
+        {#if index >= 7}
+          <line
+            x1="{xScale(0) - 20}"
+            y1="{margin.t + 50}"
+            x2="{xScale(0) - 20}"
+            y2="{height * 2 - 100}"
+            stroke-width="1"
+            stroke="white"
+            style="opacity: 0.3"
+          ></line>
+        {/if}
         <g>
           {#each $circles as {cx, cy, cr, opacity, r, g, b, id}} 
             <circle
