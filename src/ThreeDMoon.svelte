@@ -132,11 +132,11 @@
     };
 
     const raycaster = new THREE.Raycaster();
-    const tooltip = document.querySelector(".tooltip__3d");
-    const object = document.querySelector("#object");
-    const category = document.querySelector("#category");
-    const country = document.querySelector("#country");
-    const year = document.querySelector("#year");
+    const tooltip__3d = document.querySelector(".tooltip__3d");
+    const object = tooltip__3d.querySelector("#object");
+    const category = tooltip__3d.querySelector("#category");
+    const country = tooltip__3d.querySelector("#country");
+    const year = tooltip__3d.querySelector("#year");
 
     function animate() {
       requestAnimationFrame(animate);
@@ -153,14 +153,14 @@
         mesh.material.opacity = 0.4;
       });
 
-      gsap.set(tooltip, {
+      gsap.set(tooltip__3d, {
         display: "none",
       });
 
       for (let i = 0; i < intersects.length; i++) {
         const point = intersects[i].object;
         point.material.opacity = 1;
-        gsap.set(tooltip, {
+        gsap.set(tooltip__3d, {
           display: "block",
         });
         object.innerHTML = point.object;
@@ -184,7 +184,7 @@
       mouse.x = (event.clientX / innerWidth) * 2 - 1;
       mouse.y = -(event.clientY / innerHeight) * 2 + 1;
 
-      gsap.set(tooltip, {
+      gsap.set(tooltip__3d, {
         x: event.clientX,
         y: event.clientY,
       });
@@ -215,24 +215,27 @@
 
 
 </script>
-
-<h1>
-  Explore the man-made objects on the moon!
-</h1>
-<div class="tooltip tooltip__3d">
-  <strong><span id="object">Object</span></strong
-  ><br />
-  <span id="country">Country</span>
-  <span id="category">Category</span><br />
-  <span id="year">Year</span>
-</div>
 <div id="canvasContainer">
+  <h1>
+    Explore the man-made objects on the moon!
+  </h1>
+  <div class="tooltip tooltip__3d">
+    <strong><span id="object">Object</span></strong
+    ><br />
+    <span id="country">Country</span>
+    <span id="category">Category</span><br />
+    <span id="year">Year</span>
+  </div>
   <canvas></canvas>
 </div>
 
 <style>
   h1 {
     text-align: center;
+  }
+
+  #canvasContainer {
+    position: relative;
   }
 
   canvas {

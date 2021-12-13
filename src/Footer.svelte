@@ -7,3 +7,11 @@
     </a>
   </p>
 </article>
+
+<style>
+  article {
+    font-size: 0.8em;
+    border-top: 1px solid white;
+    padding: 5rem 0;
+  }
+</style>

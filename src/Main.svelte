@@ -44,8 +44,10 @@
     <p>
       Protecting the Earth may sound our priority, but it doesn't mean we are encouraged to move pollutants to the space.
     </p>
+    <p>
+      <a href="https://yuriko-schumacher.github.io/moon-three/">Explore man-made objects on the moon</a>
+    </p>
   </article>
 </section>
-<br><br><br><br><br><br><br><br><br>
-<ThreeDMoon data={moonD} />
+<!-- <ThreeDMoon data={moonD} /> -->
 <Footer />
