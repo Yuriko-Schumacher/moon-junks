@@ -48,6 +48,11 @@ a:link, a:visited {
   color: rgb(211, 211, 2);
 }
 
+a:hover {
+  color: gray;
+  transition: all 0.4s ease;
+}
+
 text {
   font-family: "Fira Sans", sans-serif;
 }
