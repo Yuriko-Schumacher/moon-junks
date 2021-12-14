@@ -77,12 +77,12 @@
     // ----- TOOLTIP -----
     const backgroundContainer = d3.select(".scrolly__2d-moon").select(".background-container")
     backgroundContainer.style("z-index", "999").style("pointer-events", "auto")
-    const circles = d3.select(".scrolly-circles").selectAll("circle")
+    const circles = d3.select(".scrolly-circles").selectAll("circle[data-visibility='1']")
     const tooltip = d3.select(".tooltip__2d")
     circles.on("mouseover", function(e) {
       let id = d3.select(this).attr("id");
       let thisD = data.filter(d => d.id === +id)[0]
-      d3.select(this).attr('stroke-width', "5")
+      d3.select(this).attr('stroke-width', "5").attr("fill-opacity", 1).attr('stroke-opacity', 1)
       tooltip
         .style("display", "block")
         .style("top", `${e.clientY + 5}px`)
@@ -92,7 +92,11 @@
                 ${thisD.launch_year}`)
     })
     circles.on("mouseout", function() {
-      d3.select(this).attr("stroke-width", "1")
+      if (index < 7) {
+        d3.select(this).attr("stroke-width", "0").attr('fill-opacity', 0.4)
+      } else {
+        d3.select(this).attr("stroke-width", "0").attr('fill-opacity', 1)
+      }
       tooltip
         .style("display", "none")
     })
@@ -124,6 +128,7 @@
       g: 0,
       b: 0,
       id: 0,
+      visibility: 0,
     })),
     {
       stiffness: 0.1,
@@ -149,7 +154,7 @@
   $: {
     if (index === 0) {
       newRasterOpacity = {
-        near: 0.8,
+        near: 0.5,
         far: 0
       }
       newCircles = data.map((d) => ({
@@ -161,14 +166,15 @@
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: 0,
       }))
       waffleOpacity = 0;
       waffleText = "";
     } else
     if (index === 1) {
       newRasterOpacity = {
-        near: 0.3,
-        far: 0.8
+        near: 0.2,
+        far: 0.5
       }
       newCircles = data.map((d) => ({
         cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
@@ -179,72 +185,77 @@
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: 0,
       }))
     } else
     if (index === 2) {
       newRasterOpacity = {
-        near: 0.3,
-        far: 0.8
+        near: 0.2,
+        far: 0.5
       }
       newCircles = data.map((d) => ({
         cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
         cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
-        opacity: d.object === "Chang'e 4" ? 1 : 0,
+        opacity: d.object === "Chang'e 4" ? 0.4 : 0,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: d.object === "Chang'e 4" ? 1 : 0,
       }))
     } else 
     if (index === 3) {
       newRasterOpacity = {
-        near: 0.8,
-        far: 0.3
+        near: 0.5,
+        far: 0.2
       }
       newCircles = data.map((d) => ({
         cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
         cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
-        opacity: d.launch_year === 1959 ? 1 : 0,
+        opacity: d.launch_year === 1959 ? 0.4 : 0,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: d.launch_year === 1959 ? 1 : 0,
       }))
     } else 
     if (index === 4 || index === 6) {
       newRasterOpacity = {
-        near: 0.8,
-        far: 0.8
+        near: 0.5,
+        far: 0.5
       }
       newCircles = data.map((d) => ({
         cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
         cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
-        opacity: d.north === 0 || d.object === "Chang'e 4" ? 0 : 0.8,
+        opacity: d.north === 0 || d.object === "Chang'e 4" ? 0 : 0.4,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: d.north === 0 || d.object === "Chang'e 4" ? 0 : 1,
       }))
       waffleOpacity = 0;
       waffleText = "";
     } else 
     if (index === 5) {
       newRasterOpacity = {
-        near: 0.8,
-        far: 0.8
+        near: 0.5,
+        far: 0.5
       }
       newCircles = data.map((d) => ({
         cx: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[0] + margin.l : moonSides[1].projection([d.east, d.north])[0] + margin.l,
         cy: d.north === 0 ? 0 : Math.abs(d.east) < 90 ? moonSides[0].projection([d.east, d.north])[1] + margin.t : moonSides[1].projection([d.east, d.north])[1] + height + margin.t,
         cr: innerWidth / 130,
-        opacity: d.is_apollo === "TRUE" && d.north !== 0 ? 0.8 : 0,
+        opacity: d.is_apollo === "TRUE" && d.north !== 0 ? 0.4 : 0,
         r: colors.yellow.r,
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: d.is_apollo === "TRUE" && d.north !== 0 ? 0.4 : 0,
       }))
     } else 
     if (index === 7) {
@@ -264,6 +275,7 @@
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: d.by_year === "NA" ? 0 : 1,
       }))
       waffleOpacity = 1;
       waffleText = "Objects landed on the Moon by year";
@@ -285,6 +297,7 @@
         g: colors.yellow.g,
         b: colors.yellow.b,
         id: d.id,
+        visibility: d.by_year === "NA" ? 0 : 1,
       }))
       waffleText = "Objects landed on the Moon by country";
     }
@@ -439,16 +452,16 @@
           {/each}
         {/if}
         <g>
-          {#each $circles as {cx, cy, cr, opacity, r, g, b, id}} 
+          {#each $circles as {cx, cy, cr, opacity, r, g, b, id, visibility}} 
             <circle
               style="{move(cx, cy)}"
               r="{cr}"
               stroke="black"
-              stroke-width="1"
-              stroke-opacity="{opacity}"
+              stroke-width="0"
               fill="rgb({r}, {g}, {b})"
               fill-opacity="{opacity}"
               id="{id}"
+              data-visibility="{visibility}"
             />
           {/each}
         </g>
@@ -478,7 +491,7 @@
       </section>
       <section class="step" data-section-id="4">
         <p>
-          In NASA’s catalogue of man-made objects, out of over 800 objects and landing points, 64 include available locations. 
+          In NASA’s catalogue of human-made objects, out of over 800 objects and landing points, 64 include available locations. 
         </p>
       </section>
       <section class="step" data-section-id="5">
@@ -493,10 +506,10 @@
       </section>
       <section class="step" data-section-id="7">
         <p>
-          In the late 60s to early 70s, the Soviet Union and the U.S. were in the “Space Race” -- the competition during the Cold War to achieve superior spaceflight capability.
+          In the late 60s to early 70s, the Soviet Union and the U.S. were in the “Space Race” &mdash; the competition during the Cold War to achieve superior spaceflight capability.
         </p>
         <p>
-          The countries continuously conducted space missions, and a vast number of man-made objects were left on the Moon.
+          The countries continuously conducted space missions, and a vast number of human-made objects were left on the Moon.
         </p>
         <p>
           There was a huge spike in the number of human artifacts on the moon in the late 1960s and 1970s.
@@ -537,10 +550,6 @@
 
   section {
     height: 80vh;
-  }
-
-  .background {
-    /* background: rgba(255, 255, 255, 0.1); */
   }
 
   .foreground {

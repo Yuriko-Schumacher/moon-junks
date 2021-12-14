@@ -35,10 +35,11 @@
     padding: 0.1em 0.3em;
     background: rgb(255, 255, 255);
     color: black;
+    animation: changeLetterBackground 3s infinite;
   }
 
   div.change-letter::after {
-    content: "Junks";
+    content: "Junk";
     animation: changeLetter 12s infinite;
   }
   
@@ -47,13 +48,34 @@
       content: "Junk";
     }
     25% {
-      content: "Debris"
+      content: "Debris";
     }
     50% {
-      content: "Man-made objects";
+      content: "Human-made objects";
     }
     75% {
-      content: "Mysterious hut??"
+      content: "Mysterious hut??";
+    }
+    100% {
+      content: "Junk";
+    }
+  }
+
+  @keyframes changeLetterBackground {
+    0% {
+      opacity: 1;
+    }
+    15% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
     }
   }
 

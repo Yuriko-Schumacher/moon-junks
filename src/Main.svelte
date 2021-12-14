@@ -33,19 +33,19 @@
       None of our business?
     </h2>
     <p>
-      The number of man-made objects, or moon junks are only increasing.
+      The number of human-made objects, or moon junk, is only increasing.
     </p>
     <p>
       They might be small compared to the whole moon, or they might be so far away from us. But think about the Moon you might see tonight.
     </p>
     <p>
-      How many man-made objects would be on the visible areas of the Moon from where you are?
+      How many human-made objects would be on the visible areas of the Moon from where you are?
     </p>
     <p>
       Protecting the Earth may sound our priority, but it doesn't mean we are encouraged to move pollutants to space.
     </p>
     <p>
-      <a href="https://yuriko-schumacher.github.io/moon-three/">Explore man-made objects on the moon</a>
+      <a href="https://yuriko-schumacher.github.io/moon-three/">Explore human-made objects on the moon</a>
     </p>
   </article>
 </section>
